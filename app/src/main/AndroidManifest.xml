@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GtdInboxWidget">
         <activity
+            android:name=".InputActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TransparentDialog"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -19,7 +23,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- GTD Inbox 위젯을 시스템에 등록합니다 -->
+        <receiver
+            android:name=".GtdInboxWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/gtd_inbox_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

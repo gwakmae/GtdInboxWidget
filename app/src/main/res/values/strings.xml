@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GtdInboxWidget</string>
+    <string name="widget_description">빠르게 Inbox에 할 일을 추가합니다.</string>
 </resources>
